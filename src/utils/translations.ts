@@ -16,6 +16,11 @@ export const translations = {
       projects: "Projects",
       blog: "Blog",
       contact: "Contact"
+    },
+    skills: {
+      programmingLanguages: "Programming Languages",
+      frameworks: "Frameworks & Libraries",
+      tools: "Tools & Technologies"
     }
   },
   ja: {
@@ -35,6 +40,11 @@ export const translations = {
       projects: "プロジェクト",
       blog: "ブログ",
       contact: "お問い合わせ"
+    },
+    skills: {
+      programmingLanguages: "プログラミング言語",
+      frameworks: "フレームワーク・ライブラリ",
+      tools: "ツール・技術"
     }
   }
 };

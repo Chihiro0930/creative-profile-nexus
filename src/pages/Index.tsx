@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 
 const Index = () => {
   return (
@@ -8,12 +9,9 @@ const Index = () => {
       <Navigation />
       <Hero />
       <About />
+      <Skills />
       
       {/* Placeholder sections for future implementation */}
-      <section id="skills" className="min-h-screen flex items-center justify-center">
-        <h2 className="font-display text-3xl">Skills Section (Coming Soon)</h2>
-      </section>
-      
       <section id="projects" className="min-h-screen flex items-center justify-center bg-accent">
         <h2 className="font-display text-3xl">Projects Section (Coming Soon)</h2>
       </section>
