@@ -21,6 +21,19 @@ export const translations = {
       programmingLanguages: "Programming Languages",
       frameworks: "Frameworks & Libraries",
       tools: "Tools & Technologies"
+    },
+    contact: {
+      title: "Get in Touch",
+      description: "I'm always interested in hearing about new projects and opportunities. Feel free to reach out!",
+      form: {
+        name: "Name",
+        nameRequired: "Please enter your name",
+        email: "Email",
+        emailRequired: "Please enter a valid email address",
+        message: "Message",
+        messageRequired: "Please enter your message",
+        submit: "Send Message"
+      }
     }
   },
   ja: {
@@ -45,6 +58,19 @@ export const translations = {
       programmingLanguages: "プログラミング言語",
       frameworks: "フレームワーク・ライブラリ",
       tools: "ツール・技術"
+    },
+    contact: {
+      title: "お問い合わせ",
+      description: "新しいプロジェクトや機会について、お気軽にご連絡ください。",
+      form: {
+        name: "お名前",
+        nameRequired: "お名前を入力してください",
+        email: "メールアドレス",
+        emailRequired: "有効なメールアドレスを入力してください",
+        message: "メッセージ",
+        messageRequired: "メッセージを入力してください",
+        submit: "送信する"
+      }
     }
   }
 };
