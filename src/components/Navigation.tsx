@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/utils/translations";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language];
 
   const navItems = [
-    { name: "About Me", href: "#about" },
-    { name: "Skill Set", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.skills, href: "#skills" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.blog, href: "#blog" },
+    { name: t.nav.contact, href: "#contact" },
   ];
 
   return (
@@ -21,16 +25,21 @@ const Navigation = () => {
             Katsuki Chihiro
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a key={item.name} href={item.href} className="nav-link">
                 {item.name}
               </a>
             ))}
+            <Button
+              variant="ghost"
+              onClick={() => setLanguage(language === 'en' ? 'ja' : 'en')}
+              className="ml-4"
+            >
+              {language === 'en' ? '日本語' : 'English'}
+            </Button>
           </div>
 
-          {/* Mobile Navigation Button */}
           <button
             className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
@@ -40,7 +49,6 @@ const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
         {isOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg animate-fade-up">
             <div className="flex flex-col space-y-4 px-4 py-6">
@@ -54,6 +62,15 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  setLanguage(language === 'en' ? 'ja' : 'en');
+                  setIsOpen(false);
+                }}
+              >
+                {language === 'en' ? '日本語' : 'English'}
+              </Button>
             </div>
           </div>
         )}

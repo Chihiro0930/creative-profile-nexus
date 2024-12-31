@@ -1,7 +1,12 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/utils/translations";
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -15,25 +20,24 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="font-display text-4xl md:text-6xl font-bold text-primary mb-6 animate-fade-up">
-            Hi, I'm Katsuki Chihiro
+            {t.hero.title}
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            I am a software engineer, web developer, and machine learning enthusiast,
-            passionate about creating innovative solutions that make a difference.
+            {t.hero.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: "0.4s" }}>
             <Button
               onClick={scrollToProjects}
               className="bg-secondary hover:bg-secondary/90 text-white px-8 py-2"
             >
-              View My Projects
+              {t.hero.viewProjects}
             </Button>
             <Button
               variant="outline"
               onClick={scrollToAbout}
               className="group"
             >
-              Learn More
+              {t.hero.learnMore}
               <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
             </Button>
           </div>
